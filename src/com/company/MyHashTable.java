@@ -1,14 +1,55 @@
 package com.company;
 
-public class MyHashTable <T extends Comparable<T>>{
-    public class Item implements Comparable<T>{
-        T data;
-        int key;
+public class MyHashTable<K, V> implements Hashh{
+    public class HashNode<K, V> {
+        private K key;
+        private V value;
+        private HashNode<K, V> next;
 
-        @Override
-        public int compareTo(T o) {
-            return 0;
+        public HashNode(K key, V value) {
+            this.key = key;
+            this.value = value;
         }
-        int size = 0;
+
+        public K getKey() {
+            return key;
+        }
+
+        public V getValue() {
+            return value;
+        }
+    }
+
+    private HashNode<K, V> chainArray[];
+    private int M = 11;
+    private int size;
+
+    private int hash(K key){
+
+    }
+
+    @Override
+    public void put(Object key, Object value) {
+
+    }
+
+    @Override
+    public Object get(Object key) {
+        return null;
+    }
+
+    @Override
+    public Object remove(Object key) {
+        return null;
+    }
+
+    @Override
+    public boolean contains(Object value) {
+        return false;
+    }
+
+    @Override
+    public Object getKey(Object value) {
+        return null;
     }
 }
