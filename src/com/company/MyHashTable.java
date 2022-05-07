@@ -63,14 +63,33 @@ public class MyHashTable<K, V>{
     }
 
     public V remove(K key) {
-        return null;
+        V helper = null;
+        for(int i = 0; i < size; i++) {
+            if (chainArray.get(i).getKey() == key) {
+                helper = chainArray.get(i).getValue();
+                chainArray.remove(i);
+                break;
+            }
+        }
+        return helper;
     }
 
     public boolean contains(V value) {
+        for(int i = 0; i < size; i++) {
+            if (chainArray.get(i).getValue() == value) {
+                return true;
+            }
+        }
         return false;
     }
 
     public K getKey(V value) {
+        for(int i = 0; i < size; i++) {
+            if (chainArray.get(i).getValue() == value) {
+                return chainArray.get(i).getKey();
+            }
+        }
+        System.out.println("not found");
         return null;
     }
 }
