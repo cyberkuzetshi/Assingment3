@@ -1,6 +1,6 @@
 package com.company;
 
-public class MyHashTable<K, V> implements Hashh{
+public class MyHashTable<K, V>{
     public class HashNode<K, V> {
         private K key;
         private V value;
@@ -25,31 +25,26 @@ public class MyHashTable<K, V> implements Hashh{
     private int size;
 
     private int hash(K key){
+        return 0;
+    }
+
+    public void put(K key, V value) {
 
     }
 
-    @Override
-    public void put(Object key, Object value) {
-
-    }
-
-    @Override
-    public Object get(Object key) {
+    public V get(K key) {
         return null;
     }
 
-    @Override
-    public Object remove(Object key) {
+    public V remove(K key) {
         return null;
     }
 
-    @Override
-    public boolean contains(Object value) {
+    public boolean contains(V value) {
         return false;
     }
 
-    @Override
-    public Object getKey(Object value) {
+    public K getKey(V value) {
         return null;
     }
 }
