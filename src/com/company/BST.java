@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.LinkedList;
 
@@ -52,9 +51,41 @@ public class BST<K extends Comparable<K>, V>{
     }
 
     public V get(K key) {
+        int remember = 0;
+        int d = 2;
+        int i = (size - 1) / d;
+        while (i < size) {
+            if ((int)key > (int)tree.get(i).key) {
+                d *= 2;
+                i += (size - 1) / d;
+            } else if ((int)key == (int)tree.get(i).key) {
+                remember = i;
+                break;
+            } else {
+                d *= 2;
+                i -= (size - 1) / d;
+            }
+        }
+        return tree.get(remember).value;
     }
 
     public void delete(K key) {
+        int remember = 0;
+        int d = 2;
+        int i = (size - 1) / d;
+        while (i < size) {
+            if ((int)key > (int)tree.get(i).key) {
+                d *= 2;
+                i += (size - 1) / d;
+            } else if ((int)key == (int)tree.get(i).key) {
+                remember = i;
+                break;
+            } else {
+                d *= 2;
+                i -= (size - 1) / d;
+            }
+        }
+        tree.remove(remember);
     }
 
     public Iterable<K> iterator() {}
